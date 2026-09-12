@@ -3,32 +3,37 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-between min-h-[100svh] px-6 pt-[12vh] lg:pt-0 pb-12 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative flex flex-col lg:flex-row items-center justify-between min-h-[100svh] px-6 max-w-7xl mx-auto overflow-hidden">
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 lg:left-1/4 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-[radial-gradient(circle,rgba(0,224,84,0.12)_0%,transparent_70%)] rounded-full pointer-events-none transform-gpu"></div>
       
       {/* Lado Esquerdo - Textos e CTA */}
-      <div className="relative z-10 flex-1 flex flex-col items-center lg:items-start text-center lg:text-left pt-10">
+      {/* Aumentei o padding bottom (pb-24) no mobile para afastar o botão da barra do navegador */}
+      <div className="relative z-10 w-full lg:flex-1 flex flex-col min-h-[100svh] lg:min-h-0 pt-[12vh] pb-24 md:pb-28 lg:pt-10 lg:pb-0 justify-between lg:justify-center text-center lg:text-left">
         
-        <div className="relative w-32 h-32 md:w-48 md:h-48 mb-2 mix-blend-screen pointer-events-none animate-float">
-          <Image src="/logo1.png" alt="Logo Assistente Financeiro IA" fill className="object-contain" priority />
+        {/* Bloco de texto centralizado verticalmente */}
+        <div className="flex flex-col items-center lg:items-start justify-center flex-1 w-full">
+          <div className="relative w-32 h-32 md:w-48 md:h-48 mb-4 mix-blend-screen pointer-events-none animate-float">
+            <Image src="/logo1.png" alt="Logo Assistente Financeiro IA" fill className="object-contain" priority />
+          </div>
+
+          <div className="inline-block px-4 py-1.5 mb-6 border border-af-green/30 bg-af-green/5 rounded-full backdrop-blur-sm">
+            <span className="text-af-green text-sm font-semibold tracking-wide">Disponível 24 horas por dia</span>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] mb-6">
+            Seu dinheiro merece atenção. <br className="hidden lg:block"/> 
+            Seu <span className="text-transparent bg-clip-text bg-gradient-to-r from-af-green to-emerald-400">Assistente IA</span> também.
+          </h1>
+          
+          <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+            Aprenda a criar e utilizar um assistente financeiro com IA para registrar, organizar e acompanhar sua vida financeira de forma simples.
+          </p>
         </div>
 
-        <div className="inline-block px-4 py-1.5 mb-6 border border-af-green/30 bg-af-green/5 rounded-full backdrop-blur-sm">
-          <span className="text-af-green text-sm font-semibold tracking-wide">Disponível 24 horas por dia</span>
-        </div>
-
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] mb-6">
-          Seu dinheiro merece atenção. <br className="hidden lg:block"/> 
-          Seu <span className="text-transparent bg-clip-text bg-gradient-to-r from-af-green to-emerald-400">Assistente IA</span> também.
-        </h1>
-        
-        <p className="text-lg md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed">
-          Aprenda a criar e utilizar um assistente financeiro com IA para registrar, organizar e acompanhar sua vida financeira de forma simples.
-        </p>
-
-        <a href="https://pay.cakto.com.br/mja4uim_1081508" className="group relative overflow-hidden px-6 py-4 md:px-10 md:py-5 bg-af-green text-black font-extrabold rounded-2xl text-[15px] md:text-lg transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,224,84,0.4)] flex items-center justify-center gap-3 w-full lg:w-auto cursor-pointer">
+        {/* O botão fica com margem de respiro suficiente para não encostar na barra de vidro do Safari/Chrome */}
+        <a href="https://pay.cakto.com.br/mja4uim_1081508" className="group relative overflow-hidden px-6 py-4 md:px-10 md:py-5 bg-af-green text-black font-extrabold rounded-2xl text-[15px] md:text-lg transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,224,84,0.4)] flex items-center justify-center gap-3 w-full lg:w-auto mt-6 lg:mt-10 cursor-pointer">
           <span className="relative z-10">QUERO TER MEU ASSISTENTE FINANCEIRO IA</span>
           <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -37,7 +42,8 @@ export default function Hero() {
       </div>
 
       {/* Lado Direito - Mockup do Celular */}
-      <div className="relative z-10 flex-1 w-full flex justify-center lg:justify-end mt-16 lg:mt-24 xl:mt-32 animate-[float_6s_ease-in-out_infinite]">
+      {/* Adicionado mt-24 md:mt-32 para empurrar o celular bem mais para baixo no mobile */}
+      <div className="relative z-10 w-full lg:flex-1 flex justify-center lg:justify-end mt-24 md:mt-32 lg:mt-24 xl:mt-32 pb-16 lg:pb-0 animate-[float_6s_ease-in-out_infinite]">
         <div className="w-[320px] h-[640px] bg-[#09090b] border-[8px] border-[#1f1f22] rounded-[3rem] shadow-[0_0_50px_rgba(0,224,84,0.15)] relative overflow-hidden flex flex-col ring-1 ring-white/10">
           
           {/* Top Bar Phone */}
