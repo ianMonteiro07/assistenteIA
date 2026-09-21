@@ -12,7 +12,7 @@ export default function Conteudo() {
       itens: [
         "Como configurar o assistente financeiro", 
         "Como personalizar para sua realidade", 
-        "Comandos e prompts prontos"
+        "Como fazer a IA organizar tudo no seu lugar" // <-- Frase focada no benefício e automação!
       ]
     },
     {
