@@ -34,7 +34,7 @@ export default function Footer() {
           </a>
 
           <a 
-            href="https://wa.me/5511971816898" 
+            href="https://wa.me/5511971816898?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20o%20Assistente%20Financeiro%20IA." 
             target="_blank" 
             rel="noopener noreferrer" 
             className="flex items-center gap-3 text-gray-400 hover:text-af-green transition-colors group w-full md:w-auto justify-center md:justify-end"
